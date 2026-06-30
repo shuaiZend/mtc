@@ -282,31 +282,129 @@ h4 { font-size: 1.25rem; margin-bottom: 0.5rem; }
   margin-top: 8px;
 }
 
-/* What is Magento - Two-column layout */
+.section-eyebrow {
+  font-size: 0.8rem;
+  color: var(--primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+/* What is Magento - Modern card layout */
 .what-is-magento {
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 40px;
-  align-items: center;
+  grid-template-columns: minmax(300px, 440px) 1fr;
+  gap: 48px;
+  align-items: start;
 }
 
 .what-is-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: sticky;
+  top: calc(var(--nav-height) + 32px);
 }
 
-.what-is-visual svg {
-  width: 100%;
-  max-width: 400px;
-  border-radius: var(--radius-md);
+.what-is-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
   box-shadow: var(--shadow-md);
 }
 
+.what-is-card-glow {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 180px;
+  height: 180px;
+  background: rgba(242,99,34,0.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.what-is-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.what-is-logo {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 28px;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(242,99,34,0.3);
+}
+
+.what-is-brand-text strong {
+  display: block;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.what-is-brand-text span {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.what-is-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 22px;
+  position: relative;
+}
+
+.what-is-stat {
+  background: var(--bg);
+  border-radius: var(--radius-md);
+  padding: 14px 10px;
+  text-align: center;
+}
+
+.what-is-stat strong {
+  display: block;
+  font-size: 1.25rem;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.what-is-stat span {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.what-is-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  position: relative;
+}
+
+.what-is-tag {
+  font-size: 0.8rem;
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  color: var(--text-light);
+  background: var(--bg-white);
+}
+
 .what-is-text h3 {
-  font-size: 1.6rem;
-  margin-bottom: 16px;
-  color: var(--secondary);
+  font-size: 1.55rem;
+  margin-bottom: 14px;
+  color: var(--text);
 }
 
 .what-is-text > p {
@@ -319,19 +417,28 @@ h4 { font-size: 1.25rem; margin-bottom: 0.5rem; }
 .what-is-highlights {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-bottom: 24px;
+  gap: 12px;
 }
 
 .highlight-item {
   display: flex;
   align-items: flex-start;
   gap: 14px;
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.highlight-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
 }
 
 .highlight-icon {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
@@ -341,77 +448,105 @@ h4 { font-size: 1.25rem; margin-bottom: 0.5rem; }
 
 .highlight-item strong {
   display: block;
-  font-size: 1rem;
+  font-size: 0.98rem;
   color: var(--text);
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 
 .highlight-item span {
   font-size: 0.85rem;
   color: var(--text-light);
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
-.what-is-comparison {
-  padding: 16px 20px;
-  background: var(--code-bg);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-}
-
-.comparison-label {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  font-weight: 600;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.comparison-badges {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.comparison-badge {
-  font-size: 0.85rem;
-  color: var(--text-light);
-  padding: 6px 12px;
+.platform-comparison {
+  margin-top: 48px;
   background: var(--bg-white);
-  border-radius: 4px;
   border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  box-shadow: var(--shadow-sm);
 }
 
-.comparison-badge-highlight {
+.comparison-eyebrow {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.comparison-cell {
+  background: var(--bg);
+  border-radius: var(--radius-md);
+  padding: 18px 14px;
+  text-align: center;
+}
+
+.comparison-name {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.comparison-desc {
+  font-size: 0.82rem;
+  color: var(--text-light);
+}
+
+.comparison-cell-active {
   background: rgba(242,99,34,0.08);
-  border-color: var(--primary);
+  border: 1px solid rgba(242,99,34,0.35);
+}
+
+.comparison-cell-active .comparison-name {
   color: var(--primary-dark);
-  font-weight: 600;
+}
+
+.comparison-cell-active .comparison-desc {
+  color: var(--primary);
 }
 
 /* Responsive for what-is-magento */
 @media (max-width: 1024px) {
   .what-is-magento {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 36px;
   }
   .what-is-visual {
+    position: static;
     order: -1;
   }
-  .what-is-visual svg {
-    max-width: 320px;
+  .what-is-card {
+    max-width: 440px;
+    margin: 0 auto;
+  }
+  .comparison-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
-  .what-is-visual svg {
-    max-width: 280px;
+  .what-is-card {
+    padding: 22px;
   }
   .what-is-text h3 {
     font-size: 1.3rem;
+  }
+  .what-is-stats {
+    gap: 10px;
+  }
+  .what-is-stat strong {
+    font-size: 1.1rem;
   }
 }
 
