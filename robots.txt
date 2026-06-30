@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.magentochina.org/sitemap.xml
+
+# Block non-content paths
+Disallow: /assets/js/
+Disallow: /assets/css/

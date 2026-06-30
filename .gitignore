@@ -1,0 +1,14 @@
+# WorkBuddy
+.workbuddy/
+
+# macOS
+.DS_Store
+*.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Temp files
+*.tmp
+*.bak

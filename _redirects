@@ -1,0 +1,20 @@
+# Cloudflare Pages - Redirects
+# https://developers.cloudflare.com/pages/configuration/redirects/
+
+# Redirect old paths to new flat-page structure
+/docs  /docs.html 301
+/docs/  /docs.html 301
+/docs/installation  /docs.html 301
+/docs/installation/  /docs.html 301
+/install  /docs.html 301
+/install/  /docs.html 301
+/installation  /docs.html 301
+/installation/  /docs.html 301
+/composer  /docs.html 301
+/docker  /docs.html 301
+/git  /docs.html 301
+/archive  /docs.html 301
+/community  /community.html 301
+/community/  /community.html 301
+/about  /about.html 301
+/about/  /about.html 301
