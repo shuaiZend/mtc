@@ -1,0 +1,12 @@
+{
+  "name": "magentochina",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Magento 2 中文社区门户与文档中心",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "rimraf": "^6.0.1"
+  }
+}

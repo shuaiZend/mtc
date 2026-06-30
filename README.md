@@ -1,7 +1,7 @@
 # Magento China — 静态网站项目
 
 > 域名：https://www.magentochina.org/
-> 部署平台：Cloudflare Pages
+> 部署平台：阿里云 EdgeOne Pages / Cloudflare Pages
 
 Magento 2 中文社区门户与文档中心，为中文商家和开发者提供 Magento 2 的商业介绍、技术文档和社区资源。
 
@@ -45,6 +45,8 @@ Magento 2 中文社区门户与文档中心，为中文商家和开发者提供 
 ├── community.html          # 社区页
 ├── about.html              # 关于页
 ├── favicon.svg             # 站点图标
+├── package.json            # npm 构建配置（部署平台需要）
+├── build.js                # 构建脚本（复制静态文件到 dist/）
 ├── assets/
 │   ├── css/
 │   │   └── style.css       # 全站样式（含变量、组件、布局）
@@ -57,6 +59,20 @@ Magento 2 中文社区门户与文档中心，为中文商家和开发者提供 
 ```
 
 ## 部署方式
+
+### 阿里云 EdgeOne Pages 部署
+
+平台要求 npm 构建流程，本项目通过 `package.json` + `build.js` 满足要求：
+
+1. 登录阿里云 EdgeOne Pages 控制台
+2. 创建新项目，连接 GitHub 仓库（`https://github.com/shuaiZend/mtc`）
+3. 构建配置：
+   - **构建命令**：`npm run build`
+   - **构建输出目录**：`dist`
+   - **Node.js 版本**：18 或更高
+4. 部署完成后，绑定自定义域名
+
+构建脚本 `build.js` 仅将静态文件复制到 `dist/` 目录，无需任何前端框架。
 
 ### Cloudflare Pages 部署
 
