@@ -97,6 +97,48 @@
     });
   });
 
+  // Sidebar group collapse/expand
+  document.querySelectorAll('.sidebar-group-title').forEach(function(title) {
+    title.addEventListener('click', function() {
+      var items = title.nextElementSibling;
+      if (items && items.classList.contains('sidebar-group-items')) {
+        title.classList.toggle('collapsed');
+        items.classList.toggle('collapsed-items');
+      }
+    });
+  });
+
+  // Highlight active sidebar group based on scroll position
+  var groupMarkers = document.querySelectorAll('.sidebar-group-marker');
+  var groupTitles = document.querySelectorAll('.sidebar-group-title[data-group]');
+
+  if (groupMarkers.length > 0 && groupTitles.length > 0) {
+    function updateActiveGroup() {
+      var scrollY = window.scrollY + 120;
+      var activeGroup = null;
+
+      groupMarkers.forEach(function(marker) {
+        if (marker.offsetTop <= scrollY) {
+          var id = marker.id;
+          var groupName = id.replace('-marker', '').replace('group-', '');
+          activeGroup = groupName;
+        }
+      });
+
+      groupTitles.forEach(function(title) {
+        var groupName = title.getAttribute('data-group');
+        if (groupName === activeGroup) {
+          title.classList.add('active-group');
+        } else {
+          title.classList.remove('active-group');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateActiveGroup);
+    updateActiveGroup();
+  }
+
   // Collapsible sections
   document.querySelectorAll('.collapsible-header').forEach(function(header) {
     header.addEventListener('click', function() {

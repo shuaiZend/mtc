@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Magento 2 技术文档 - 安装、配置、架构、开发、API 参考 | Magento China</title>
-  <meta name="description" content="Magento 2 中文技术文档中心，涵盖安装指南（Composer/Docker/Git/归档包）、系统配置、架构概览、模块开发、前端开发、API参考、安全与性能最佳实践。">
-  <meta name="keywords" content="Magento 2文档, Magento安装, Magento架构, Magento开发, Magento API, Magento CLI">
+  <title>Magento 2 技术文档 - 安装、使用、开发、API | Magento China</title>
+  <meta name="description" content="Magento 2 中文技术文档中心，涵盖安装指南（Composer/Docker/Git）、商店使用配置、架构与模块开发、REST/GraphQL API 参考。">
+  <meta name="keywords" content="Magento 2文档, Magento安装, Magento使用, Magento开发, Magento API, Magento CLI">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Magento 2 技术文档中心 | Magento China">
-  <meta property="og:description" content="Magento 2 中文技术文档，安装、配置、架构、开发完整指南。">
+  <meta property="og:description" content="Magento 2 中文技术文档，安装、使用、开发、API 完整指南。">
   <meta property="og:url" content="https://www.magentochina.org/docs.html">
   <meta property="og:site_name" content="Magento China">
   <link rel="canonical" href="https://www.magentochina.org/docs.html">
@@ -20,7 +20,7 @@
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "headline": "Magento 2 技术文档中心",
-    "description": "Magento 2 中文技术文档，涵盖安装、配置、架构、开发、API参考",
+    "description": "Magento 2 中文技术文档，涵盖安装、使用、开发、API参考",
     "url": "https://www.magentochina.org/docs.html",
     "inLanguage": "zh-CN",
     "proficiencyLevel": "Beginner"
@@ -58,7 +58,7 @@
         <a href="/">首页</a><span class="sep">/</span><span>技术文档</span>
       </div>
       <h1>Magento 2 技术文档</h1>
-      <p>安装指南 · 架构概览 · 模块开发 · API 参考 · 安全与性能</p>
+      <p>安装指南 · 商店使用 · 模块开发 · API 参考 · 安全与性能</p>
     </div>
   </section>
 
@@ -72,147 +72,107 @@
           <input type="text" placeholder="搜索文档..." aria-label="Search docs">
         </div>
 
-        <div class="sidebar-title">入门指南</div>
-        <ul class="sidebar-nav">
-          <li><a href="#getting-started">Magento 2 总览</a></li>
-          <li><a href="#core-features">核心功能</a></li>
-          <li><a href="#versions">版本与更新</a></li>
-        </ul>
+        <!-- 📦 安装文档 -->
+        <div class="sidebar-group">
+          <div class="sidebar-group-title active-group" data-group="install">
+            <span class="group-icon">📦</span> 安装文档
+            <svg class="group-toggle" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <ul class="sidebar-nav sidebar-group-items">
+            <li><a href="#installation">系统要求</a></li>
+            <li><a href="#install-composer">Composer 安装</a></li>
+            <li><a href="#install-docker">Docker 安装</a></li>
+            <li><a href="#install-git">Git/GitHub 安装</a></li>
+            <li><a href="#install-archive">归档包安装</a></li>
+            <li><a href="#install-local">本地开发环境</a></li>
+            <li><a href="#install-verify">安装后验证</a></li>
+            <li><a href="#upgrade">升级指南</a></li>
+          </ul>
+        </div>
 
-        <div class="sidebar-title">安装指南</div>
-        <ul class="sidebar-nav">
-          <li><a href="#installation">系统要求</a></li>
-          <li><a href="#install-composer">Composer 安装</a></li>
-          <li><a href="#install-docker">Docker 安装</a></li>
-          <li><a href="#install-git">Git/GitHub 安装</a></li>
-          <li><a href="#install-archive">归档包安装</a></li>
-          <li><a href="#install-local">本地开发环境</a></li>
-        </ul>
+        <!-- 📖 使用文档 -->
+        <div class="sidebar-group">
+          <div class="sidebar-group-title" data-group="usage">
+            <span class="group-icon">📖</span> 使用文档
+            <svg class="group-toggle" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <ul class="sidebar-nav sidebar-group-items">
+            <li><a href="#configuration">商店基本设置</a></li>
+            <li><a href="#product-management">商品管理</a></li>
+            <li><a href="#order-management">订单处理</a></li>
+            <li><a href="#marketing">营销与促销</a></li>
+            <li><a href="#seo-settings">SEO 设置</a></li>
+            <li><a href="#multistore">多店铺管理</a></li>
+            <li><a href="#cache">缓存管理</a></li>
+            <li><a href="#cron">Cron 任务</a></li>
+          </ul>
+        </div>
 
-        <div class="sidebar-title">基本配置</div>
-        <ul class="sidebar-nav">
-          <li><a href="#configuration">商店基本设置</a></li>
-          <li><a href="#cache">缓存管理</a></li>
-          <li><a href="#cron">Cron 任务</a></li>
-        </ul>
+        <!-- 🔧 开发文档 -->
+        <div class="sidebar-group">
+          <div class="sidebar-group-title" data-group="dev">
+            <span class="group-icon">🔧</span> 开发文档
+            <svg class="group-toggle" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <ul class="sidebar-nav sidebar-group-items">
+            <li><a href="#architecture">架构概览</a></li>
+            <li><a href="#module-arch">模块架构</a></li>
+            <li><a href="#directory-structure">目录结构</a></li>
+            <li><a href="#module-dev">模块开发入门</a></li>
+            <li><a href="#di">依赖注入 (DI)</a></li>
+            <li><a href="#plugins">插件 (Plugins)</a></li>
+            <li><a href="#observers">观察者 (Observers)</a></li>
+            <li><a href="#service-contracts">服务契约</a></li>
+            <li><a href="#theme-dev">主题开发</a></li>
+            <li><a href="#layout-blocks">布局与区块</a></li>
+            <li><a href="#ui-components">UI 组件</a></li>
+            <li><a href="#cli">CLI 命令参考</a></li>
+          </ul>
+        </div>
 
-        <div class="sidebar-title">架构概览</div>
-        <ul class="sidebar-nav">
-          <li><a href="#architecture">架构组件总览</a></li>
-          <li><a href="#module-arch">模块架构</a></li>
-          <li><a href="#directory-structure">目录结构</a></li>
-        </ul>
+        <!-- 🔌 API文档 -->
+        <div class="sidebar-group">
+          <div class="sidebar-group-title" data-group="api">
+            <span class="group-icon">🔌</span> API 文档
+            <svg class="group-toggle" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <ul class="sidebar-nav sidebar-group-items">
+            <li><a href="#rest-api">REST API</a></li>
+            <li><a href="#graphql-api">GraphQL API</a></li>
+            <li><a href="#webapi-auth">Web API 认证</a></li>
+            <li><a href="#security">安全功能</a></li>
+            <li><a href="#performance">性能最佳实践</a></li>
+          </ul>
+        </div>
 
-        <div class="sidebar-title">模块开发</div>
-        <ul class="sidebar-nav">
-          <li><a href="#module-dev">模块开发入门</a></li>
-          <li><a href="#di">依赖注入</a></li>
-          <li><a href="#plugins">插件 (Plugins)</a></li>
-          <li><a href="#observers">观察者 (Observers)</a></li>
-          <li><a href="#service-contracts">服务契约</a></li>
-        </ul>
-
-        <div class="sidebar-title">前端开发</div>
-        <ul class="sidebar-nav">
-          <li><a href="#theme-dev">主题开发</a></li>
-          <li><a href="#layout-blocks">布局与区块</a></li>
-          <li><a href="#ui-components">UI 组件</a></li>
-        </ul>
-
-        <div class="sidebar-title">API 参考</div>
-        <ul class="sidebar-nav">
-          <li><a href="#rest-api">REST API</a></li>
-          <li><a href="#graphql-api">GraphQL API</a></li>
-          <li><a href="#webapi-auth">Web API 认证</a></li>
-        </ul>
-
-        <div class="sidebar-title">安全与性能</div>
-        <ul class="sidebar-nav">
-          <li><a href="#security">安全功能</a></li>
-          <li><a href="#performance">性能最佳实践</a></li>
-        </ul>
-
-        <div class="sidebar-title">CLI 命令</div>
-        <ul class="sidebar-nav">
-          <li><a href="#cli">常用命令参考</a></li>
-        </ul>
-
-        <div class="sidebar-title">资源</div>
-        <ul class="sidebar-nav">
-          <li><a href="https://forum.magentochina.org/" target="_blank" rel="noopener">社区论坛 ↗</a></li>
-          <li><a href="https://devdocs.mage-os.org/" target="_blank" rel="noopener">Mage-OS 文档 ↗</a></li>
-          <li><a href="https://developer.adobe.com/commerce/docs/" target="_blank" rel="noopener">Adobe 文档 ↗</a></li>
-        </ul>
+        <!-- 🔗 资源 -->
+        <div class="sidebar-group">
+          <div class="sidebar-group-title" data-group="resources">
+            <span class="group-icon">🔗</span> 资源
+            <svg class="group-toggle" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <ul class="sidebar-nav sidebar-group-items">
+            <li><a href="https://forum.magentochina.org/" target="_blank" rel="noopener">社区论坛 ↗</a></li>
+            <li><a href="https://github.com/shuaiZend/mtc" target="_blank" rel="noopener">本站 GitHub ↗</a></li>
+            <li><a href="https://devdocs.mage-os.org/" target="_blank" rel="noopener">Mage-OS 文档 ↗</a></li>
+            <li><a href="https://developer.adobe.com/commerce/docs/" target="_blank" rel="noopener">Adobe 文档 ↗</a></li>
+          </ul>
+        </div>
       </aside>
 
       <!-- Content -->
       <main class="docs-content">
 
-        <!-- ==================== 入门指南 ==================== -->
-        <h1 id="getting-started">入门指南 — Magento 2 总览</h1>
-
-        <p>Magento 2 是一个基于 PHP 的开源电商平台，采用模块化架构设计，为商家提供灵活、强大、可扩展的在线商店解决方案。自 2015 年发布以来，Magento 2 已成为全球企业级电商平台的行业标准。</p>
-
-        <div class="illustration">
-          <svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg">
-            <text x="340" y="20" text-anchor="middle" font-size="16" font-weight="700" fill="#1a1a2e">Magento 2 核心定位</text>
-            <rect x="30" y="50" width="200" height="60" rx="10" fill="#f26322"/>
-            <text x="130" y="75" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">开源核心</text>
-            <text x="130" y="95" text-anchor="middle" font-size="9" fill="#fff">Mage-OS / Adobe Commerce</text>
-            <rect x="260" y="50" width="200" height="60" rx="10" fill="#6c63ff"/>
-            <text x="360" y="75" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">模块化架构</text>
-            <text x="360" y="95" text-anchor="middle" font-size="9" fill="#fff">灵活定制 · 无限扩展</text>
-            <rect x="490" y="50" width="160" height="60" rx="10" fill="#28a745"/>
-            <text x="570" y="75" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">企业级能力</text>
-            <text x="570" y="95" text-anchor="middle" font-size="9" fill="#fff">250K+ 全球商店</text>
-            <text x="340" y="160" text-anchor="middle" font-size="11" fill="#666">开源版（Mage-OS）免费使用 · 商业版（Adobe Commerce）付费增值 · 代码完全兼容</text>
-          </svg>
+        <!-- ==================== 📦 安装文档 ==================== -->
+        <div class="sidebar-group-marker" id="group-install-marker">
+          <div class="group-banner">
+            <span class="group-banner-icon">📦</span>
+            <h2>安装文档</h2>
+            <p>从系统要求到多种安装方式，完整指导您部署 Magento 2</p>
+          </div>
         </div>
 
-        <h2 id="core-features">核心功能</h2>
-
-        <p>Magento 2 提供完整的电商运营功能体系：</p>
-
-        <div class="table-wrapper">
-          <table>
-            <thead><tr><th>功能类别</th><th>核心能力</th><th>说明</th></tr></thead>
-            <tbody>
-              <tr><td><strong>商品管理</strong></td><td>多种商品类型</td><td>简单、可配置、捆绑、分组、虚拟、可下载 6 种商品类型</td></tr>
-              <tr><td><strong>订单处理</strong></td><td>完整订单流程</td><td>创建、编辑、发货、退款、多发票、打印单据</td></tr>
-              <tr><td><strong>营销促销</strong></td><td>灵活促销规则</td><td>优惠券、打折规则、捆绑销售、满减满赠、限时促销</td></tr>
-              <tr><td><strong>多店铺</strong></td><td>多品牌管理</td><td>一个后台管理多个站点、品牌、语言版本</td></tr>
-              <tr><td><strong>跨境销售</strong></td><td>本地化支持</td><td>多语言、多货币、多税率，自动展示对应地区内容</td></tr>
-              <tr><td><strong>SEO</strong></td><td>搜索优化</td><td>SEO 友好 URL、站点地图、元数据自定义</td></tr>
-              <tr><td><strong>移动端</strong></td><td>响应式设计</td><td>所有设备友好展示，移动优化结账流程</td></tr>
-              <tr><td><strong>安全</strong></td><td>多层防护</td><td>双因素认证、CAPTCHA、自定义管理路径、PCI 合规</td></tr>
-              <tr><td><strong>客户忠诚</strong></td><td>积分与礼品</td><td>积分系统、礼品卡、心愿单、评价评分</td></tr>
-              <tr><td><strong>数据分析</strong></td><td>报表与洞察</td><td>销售报表、购物车分析、Google Analytics 集成</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h2 id="versions">版本与更新</h2>
-
-        <div class="table-wrapper">
-          <table>
-            <thead><tr><th>版本</th><th>PHP</th><th>发布日期</th><th>关键变更</th></tr></thead>
-            <tbody>
-              <tr><td><strong>2.4.8</strong></td><td>8.3/8.4</td><td>2026</td><td>移除 Elasticsearch，仅支持 OpenSearch 3；Valkey 8 替代 Redis</td></tr>
-              <tr><td><strong>2.4.7</strong></td><td>8.2/8.3</td><td>2025</td><td>RabbitMQ 4.x 支持；增强安全补丁</td></tr>
-              <tr><td><strong>2.4.6</strong></td><td>8.1/8.2</td><td>2024</td><td>OpenSearch 2.x；MariaDB 10.6</td></tr>
-              <tr><td><strong>2.4.5</strong></td><td>8.1</td><td>2023</td><td>Composer 2.2+；Redis 6/7</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="callout callout-warning">
-          <span class="callout-icon">⚠️</span> Magento 2.4.8 已<strong>移除 Elasticsearch 支持</strong>，必须使用 OpenSearch 3.x。PHP 8.2 仅允许用于升级过渡，新安装必须使用 PHP 8.3+。
-        </div>
-
-        <hr class="docs-section-divider">
-
-        <!-- ==================== 安装指南 ==================== -->
-        <h1 id="installation">安装指南 — 系统要求</h1>
+        <h1 id="installation">系统要求</h1>
 
         <div class="illustration">
           <svg viewBox="0 0 680 320" xmlns="http://www.w3.org/2000/svg">
@@ -473,34 +433,6 @@ openssl, pdo_mysql, simplexml, soap, spl, xsl, zip, sodium</pre>
             <div class="callout callout-danger"><span class="callout-icon">🔴</span> <strong>关键参数</strong>：<code>--search-engine="opensearch"</code> 必须使用 opensearch；旧 <code>elasticsearch7</code> 不再支持。管理员密码至少 7 字符+字母数字。</div>
           </div>
 
-          <!-- Step 7 -->
-          <div class="step">
-            <h3><span class="step-number">7</span> 验证安装 & 切换生产模式</h3>
-            <div class="command-line">
-<span class="cmd-prefix">$</span> bin/magento info:adminuri<br>
-<span style="color:#3fb950;">Admin URI: /admin_xxxxx</span>  <span style="color:#888;"># 记录此地址</span><br>
-<span class="cmd-prefix">$</span> bin/magento setup:di:compile<br>
-<span class="cmd-prefix">$</span> bin/magento setup:static-content:deploy -f<br>
-<span class="cmd-prefix">$</span> bin/magento cache:flush<br>
-<span class="cmd-prefix">$</span> bin/magento deploy:mode:set production<br>
-<span style="color:#3fb950;">Successfully switched to production mode.</span>
-            </div>
-
-            <div class="illustration">
-              <svg viewBox="0 0 680 120" xmlns="http://www.w3.org/2000/svg">
-                <text x="340" y="15" text-anchor="middle" font-size="13" font-weight="600" fill="#1a1a2e">安装验证清单</text>
-                <rect x="20" y="35" width="155" height="35" rx="8" fill="#28a745" opacity="0.1" stroke="#28a745"/><text x="97" y="57" text-anchor="middle" font-size="10" fill="#28a745" font-weight="600">✓ 前台页面可访问</text>
-                <rect x="195" y="35" width="155" height="35" rx="8" fill="#28a745" opacity="0.1" stroke="#28a745"/><text x="272" y="57" text-anchor="middle" font-size="10" fill="#28a745" font-weight="600">✓ 后台可登录</text>
-                <rect x="370" y="35" width="155" height="35" rx="8" fill="#28a745" opacity="0.1" stroke="#28a745"/><text x="447" y="57" text-anchor="middle" font-size="10" fill="#28a745" font-weight="600">✓ 生产模式已启用</text>
-                <rect x="545" y="35" width="115" height="35" rx="8" fill="#28a745" opacity="0.1" stroke="#28a745"/><text x="602" y="57" text-anchor="middle" font-size="10" fill="#28a745" font-weight="600">✓ Cron 已安装</text>
-                <text x="340" y="105" text-anchor="middle" font-size="11" fill="#f26322" font-weight="600">🎉 安装完成！开始配置您的商店 →</text>
-              </svg>
-              <div class="caption">安装验证步骤</div>
-            </div>
-
-            <div class="callout callout-danger"><span class="callout-icon">🔴</span> 上线前必须切换到 <code>production</code> 模式！禁止在 <code>developer</code> 模式运行生产店铺。</div>
-          </div>
-
           <!-- Troubleshooting -->
           <h3>常见问题</h3>
           <div class="table-wrapper">
@@ -544,8 +476,7 @@ openssl, pdo_mysql, simplexml, soap, spl, xsl, zip, sodium</pre>
           <div class="command-line">
 <span class="cmd-prefix">$</span> curl -s https://raw.githubusercontent.com/markshust/docker-magento/master/lib/onboards \| bash<br>
 <span class="cmd-prefix">$</span> cd magento<br>
-<span class="cmd-prefix">$</span> bin/setup <span style="color:#888;"># 自动创建项目 + 安装 + 配置</span><br>
-<span class="cmd-prefix">$</span> bin/setup <span style="color:#888;"># 一键完成所有步骤</span>
+<span class="cmd-prefix">$</span> bin/setup <span style="color:#888;"># 自动创建项目 + 安装 + 配置</span>
           </div>
 
           <h3>方案 B：DDEV</h3>
@@ -580,7 +511,7 @@ openssl, pdo_mysql, simplexml, soap, spl, xsl, zip, sodium</pre>
 <span class="cmd-prefix">$</span> cd magento2<br>
 <span class="cmd-prefix">$</span> composer install<br>
 <span class="cmd-prefix">$</span> bin/magento setup:install --...<br>
-<span style="color:#888;"># 后续步骤与 Composer 安装相同（Step 3-7）</span>
+<span style="color:#888;"># 后续步骤与 Composer 安装相同</span>
           </div>
           <div class="callout callout-info"><span class="callout-icon">💡</span> 克隆的仓库是开发版本，可能不稳定。生产环境推荐 Composer 安装。</div>
         </div>
@@ -615,10 +546,71 @@ openssl, pdo_mysql, simplexml, soap, spl, xsl, zip, sodium</pre>
           </div>
         </div>
 
+        <!-- 安装后验证 -->
+        <h2 id="install-verify">安装后验证</h2>
+
+        <div class="command-line">
+<span class="cmd-prefix">$</span> bin/magento info:adminuri<br>
+<span style="color:#3fb950;">Admin URI: /admin_xxxxx</span>  <span style="color:#888;"># 记录此地址</span><br>
+<span class="cmd-prefix">$</span> bin/magento setup:di:compile<br>
+<span class="cmd-prefix">$</span> bin/magento setup:static-content:deploy -f<br>
+<span class="cmd-prefix">$</span> bin/magento cache:flush<br>
+<span class="cmd-prefix">$</span> bin/magento deploy:mode:set production<br>
+<span style="color:#3fb950;">Successfully switched to production mode.</span>
+        </div>
+
+        <div class="illustration">
+          <svg viewBox="0 0 680 120" xmlns="http://www.w3.org/2000/svg">
+            <text x="340" y="15" text-anchor="middle" font-size="13" font-weight="600" fill="#1a1a2e">安装验证清单</text>
+            <rect x="20" y="35" width="155" height="35" rx="8" fill="#28a745" opacity="0.1" stroke="#28a745"/><text x="97" y="57" text-anchor="middle" font-size="10" fill="#28a745" font-weight="600">✓ 前台页面可访问</text>
+            <rect x="195" y="35" width="155" height="35" rx="8" fill="#28a745" opacity="0.1" stroke="#28a745"/><text x="272" y="57" text-anchor="middle" font-size="10" fill="#28a745" font-weight="600">✓ 后台可登录</text>
+            <rect x="370" y="35" width="155" height="35" rx="8" fill="#28a745" opacity="0.1" stroke="#28a745"/><text x="447" y="57" text-anchor="middle" font-size="10" fill="#28a745" font-weight="600">✓ 生产模式已启用</text>
+            <rect x="545" y="35" width="115" height="35" rx="8" fill="#28a745" opacity="0.1" stroke="#28a745"/><text x="602" y="57" text-anchor="middle" font-size="10" fill="#28a745" font-weight="600">✓ Cron 已安装</text>
+            <text x="340" y="105" text-anchor="middle" font-size="11" fill="#f26322" font-weight="600">🎉 安装完成！开始配置您的商店 →</text>
+          </svg>
+          <div class="caption">安装验证步骤</div>
+        </div>
+
+        <div class="callout callout-danger"><span class="callout-icon">🔴</span> 上线前必须切换到 <code>production</code> 模式！禁止在 <code>developer</code> 模式运行生产店铺。</div>
+
+        <!-- 升级指南 -->
+        <h2 id="upgrade">升级指南</h2>
+
+        <p>Magento 定期发布安全补丁和功能更新。升级前务必做好备份。</p>
+
+        <div class="callout callout-warning"><span class="callout-icon">⚠️</span> <strong>升级前必做</strong>：备份数据库 + 代码 + 媒体文件，在测试环境先验证升级。</div>
+
+        <div class="command-line">
+<span class="cmd-prefix">$</span> <span style="color:#888;"># 1. 备份数据库和代码</span><br>
+<span class="cmd-prefix">$</span> bin/magento setup:backup --code --db --media<br>
+<span class="cmd-prefix">$</span> <span style="color:#888;"># 2. 切换到维护模式</span><br>
+<span class="cmd-prefix">$</span> bin/magento maintenance:enable<br>
+<span class="cmd-prefix">$</span> <span style="color:#888;"># 3. 更新 Composer 依赖</span><br>
+<span class="cmd-prefix">$</span> composer require magento/product-community-edition=2.4.8 --no-update<br>
+<span class="cmd-prefix">$</span> composer update<br>
+<span class="cmd-prefix">$</span> <span style="color:#888;"># 4. 运行升级</span><br>
+<span class="cmd-prefix">$</span> bin/magento setup:upgrade<br>
+<span class="cmd-prefix">$</span> bin/magento setup:di:compile<br>
+<span class="cmd-prefix">$</span> bin/magento setup:static-content:deploy -f<br>
+<span class="cmd-prefix">$</span> bin/magento cache:flush<br>
+<span class="cmd-prefix">$</span> <span style="color:#888;"># 5. 关闭维护模式</span><br>
+<span class="cmd-prefix">$</span> bin/magento maintenance:disable
+        </div>
+
+        <div class="callout callout-info"><span class="callout-icon">💡</span> 升级详细说明请参考 <a href="https://devdocs.mage-os.org/" target="_blank" rel="noopener">Mage-OS 官方文档</a>。</div>
+
         <hr class="docs-section-divider">
 
-        <!-- ==================== 基本配置 ==================== -->
-        <h1 id="configuration">基本配置 — 商店设置</h1>
+        <!-- ==================== 📖 使用文档 ==================== -->
+        <div class="sidebar-group-marker" id="group-usage-marker">
+          <div class="group-banner">
+            <span class="group-banner-icon">📖</span>
+            <h2>使用文档</h2>
+            <p>商店配置、商品管理、订单处理、营销促销等日常运营指南</p>
+          </div>
+        </div>
+
+        <h1 id="configuration">商店基本设置</h1>
 
         <p>安装完成后，需要配置以下核心设置：</p>
 
@@ -630,11 +622,101 @@ openssl, pdo_mysql, simplexml, soap, spl, xsl, zip, sodium</pre>
               <tr><td><strong>货币与税率</strong></td><td>Stores → Currency & Tax</td><td>设置货币显示、税率规则</td></tr>
               <tr><td><strong>支付方式</strong></td><td>Stores → Payment Methods</td><td>启用/配置支付网关</td></tr>
               <tr><td><strong>物流方式</strong></td><td>Stores → Shipping Methods</td><td>配置运费计算和配送方式</td></tr>
-              <tr><td><strong>SEO 设置</strong></td><td>Stores → SEO</td><td>URL 重写、元数据模板</td></tr>
               <tr><td><strong>邮件发送</strong></td><td>Stores → Email</td><td>SMTP 配置、订单确认邮件模板</td></tr>
             </tbody>
           </table>
         </div>
+
+        <h2 id="product-management">商品管理</h2>
+
+        <p>Magento 支持 6 种商品类型，覆盖几乎所有电商场景：</p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>商品类型</th><th>适用场景</th><th>说明</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Simple Product</strong></td><td>单件商品</td><td>最基本类型，一个 SKU 一个价格，如一本书</td></tr>
+              <tr><td><strong>Configurable Product</strong></td><td>多规格商品</td><td>有颜色/尺码等选项，每个选项对应一个 Simple Product</td></tr>
+              <tr><td><strong>Grouped Product</strong></td><td>组合商品</td><td>多个 Simple Product 组合展示，如一套家具</td></tr>
+              <tr><td><strong>Bundled Product</strong></td><td>捆绑定制</td><td>客户自选组合，如电脑配置（CPU+内存+硬盘）</td></tr>
+              <tr><td><strong>Virtual Product</strong></td><td>虚拟商品</td><td>无需物流，如服务、会员、保险</td></tr>
+              <tr><td><strong>Downloadable Product</strong></td><td>下载商品</td><td>电子书、软件、音乐文件等可下载内容</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout callout-info"><span class="callout-icon">💡</span> <strong>批量操作</strong>：后台 Catalog → Products 支持批量编辑价格、状态、属性，也可通过 CSV 导入导出商品数据。</div>
+
+        <h2 id="order-management">订单处理</h2>
+
+        <p>Magento 提供完整的订单生命周期管理：</p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>操作</th><th>后台位置</th><th>说明</th></tr></thead>
+            <tbody>
+              <tr><td><strong>查看订单</strong></td><td>Sales → Orders</td><td>查看所有订单详情、客户信息、商品明细</td></tr>
+              <tr><td><strong>创建发票</strong></td><td>Order → Invoice</td><td>确认收款后创建发票，部分或全额</td></tr>
+              <tr><td><strong>发货</strong></td><td>Order → Ship</td><td>添加物流单号和备注，支持分批发货</td></tr>
+              <tr><td><strong>退款</strong></td><td>Order → Credit Memo</td><td>全额或部分退款，退款到原支付方式</td></tr>
+              <tr><td><strong>取消订单</strong></td><td>Order → Cancel</td><td>未付款订单可取消</td></tr>
+              <tr><td><strong>订单状态</strong></td><td>自动流转</td><td>Pending → Processing → Complete / Canceled</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="marketing">营销与促销</h2>
+
+        <p>Magento 内置完整的促销系统，无需额外插件即可创建多种营销活动：</p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>促销类型</th><th>配置位置</th><th>典型用法</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Catalog Price Rule</strong></td><td>Marketing → Catalog Rules</td><td>全场打折、分类打折、会员专属价</td></tr>
+              <tr><td><strong>Cart Price Rule</strong></td><td>Marketing → Cart Rules</td><td>购物车满减、优惠券码、买N免1</td></tr>
+              <tr><td><strong>Coupon Code</strong></td><td>Cart Rule → Coupon</td><td>自动生成/手动指定优惠券码</td></tr>
+              <tr><td><strong>Related/Up-sell/Cross-sell</strong></td><td>Product → Related Products</td><td>关联推荐、升级推荐、交叉推荐</td></tr>
+              <tr><td><strong>Bundled Discount</strong></td><td>Bundled Product</td><td>搭配组合优惠价</td></tr>
+              <tr><td><strong>Loyalty Points</strong></td><td>需第三方扩展</td><td>积分系统（Mage-OS 开源版需扩展）</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="seo-settings">SEO 设置</h2>
+
+        <p>Magento 内置强大的 SEO 功能，帮助您的商店获得更多自然搜索流量：</p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>SEO 功能</th><th>配置位置</th><th>说明</th></tr></thead>
+            <tbody>
+              <tr><td><strong>URL 重写</strong></td><td>Marketing → URL Rewrites</td><td>自定义商品/分类 URL，去除冗余参数</td></tr>
+              <tr><td><strong>元数据模板</strong></td><td>Stores → SEO</td><td>批量设置商品/分类的 title、description、keywords 模板</td></tr>
+              <tr><td><strong>站点地图</strong></td><td>Marketing → Sitemap</td><td>自动生成 sitemap.xml，提交到搜索引擎</td></tr>
+              <tr><td><strong>Alt 标签</strong></td><td>Product → Images</td><td>商品图片自动生成 alt 标签</td></tr>
+              <tr><td><strong>Canonical URL</strong></td><td>Stores → SEO</td><td>防止重复内容，指定规范 URL</td></tr>
+              <tr><td><strong>Robots Meta</strong></td><td>Stores → SEO</td><td>控制搜索引擎爬取特定页面</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="multistore">多店铺管理</h2>
+
+        <p>Magento 的多店铺系统是其核心优势之一，一个后台可以管理多个完全独立的商店：</p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>概念</th><th>说明</th><th>典型用法</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Website</strong></td><td>独立站点，可有独立域名</td><td>品牌A (brand-a.com) + 品牌B (brand-b.com)</td></tr>
+              <tr><td><strong>Store</strong></td><td>一个 Website 下的子商店</td><td>英文店 + 中文店（同一品牌不同语言）</td></tr>
+              <tr><td><strong>Store View</strong></td><td>同一 Store 的不同展示版本</td><td>CNY 人民币视图 + USD 美元视图</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout callout-success"><span class="callout-icon">✅</span> 所有店铺共享同一数据库和后台，但各自有独立的商品分类、定价、主题和客户体验。共享库存，独立定价。</div>
 
         <h2 id="cache">缓存管理</h2>
         <div class="command-line">
@@ -655,8 +737,16 @@ openssl, pdo_mysql, simplexml, soap, spl, xsl, zip, sodium</pre>
 
         <hr class="docs-section-divider">
 
-        <!-- ==================== 架构概览 ==================== -->
-        <h1 id="architecture">架构概览 — 架构组件总览</h1>
+        <!-- ==================== 🔧 开发文档 ==================== -->
+        <div class="sidebar-group-marker" id="group-dev-marker">
+          <div class="group-banner">
+            <span class="group-banner-icon">🔧</span>
+            <h2>开发文档</h2>
+            <p>架构设计、模块开发、前端定制、CLI 工具——开发者完整参考</p>
+          </div>
+        </div>
+
+        <h1 id="architecture">架构概览</h1>
 
         <p>Magento 2 采用模块化架构，核心功能被拆分为独立模块，通过 Service Contracts 和 DI 实现松耦合。</p>
 
@@ -708,12 +798,20 @@ openssl, pdo_mysql, simplexml, soap, spl, xsl, zip, sodium</pre>
 └── composer.json     # Composer 包定义</pre>
         </div>
 
-        <hr class="docs-section-divider">
+        <h1 id="module-dev">模块开发入门</h1>
 
-        <!-- ==================== 模块开发 ==================== -->
-        <h1 id="module-dev">模块开发 — 入门</h1>
+        <p>创建自定义模块是扩展 Magento 功能的核心方式。每个模块需要 <code>registration.php</code> 和 <code>etc/module.xml</code> 两个必要文件。</p>
 
-        <p>创建自定义模块是扩展 Magento 功能的核心方式。</p>
+        <div class="code-block"><span class="code-label">registration.php</span>
+<pre>&lt;?php
+\Magento\Framework\Component\ComponentRegistrar::register(
+  \Magento\Framework\Component\ComponentRegistrar::MODULE,
+  'Vendor_Module',
+  __DIR__
+);</pre>
+        </div>
+
+        <div class="callout callout-info"><span class="callout-icon">💡</span> 模块命名遵循 <code>Vendor_Module</code> 格式，目录对应 <code>app/code/Vendor/Module/</code>。</div>
 
         <h2 id="di">依赖注入 (DI)</h2>
         <p>Magento 2 使用 <code>di.xml</code> 配置依赖注入，替代直接 new 对象。</p>
@@ -768,10 +866,7 @@ openssl, pdo_mysql, simplexml, soap, spl, xsl, zip, sodium</pre>
         <p>服务契约定义模块的公共 API 接口，确保稳定性。</p>
         <div class="callout callout-info"><span class="callout-icon">💡</span> <strong>最佳实践</strong>：所有模块对外通信必须通过 Service Contracts（接口），而非直接调用实现类。接口定义在 <code>Api/</code> 目录。</div>
 
-        <hr class="docs-section-divider">
-
-        <!-- ==================== 前端开发 ==================== -->
-        <h1 id="theme-dev">前端开发 — 主题开发</h1>
+        <h2 id="theme-dev">主题开发</h2>
 
         <div class="code-block"><span class="code-label">主题目录结构</span>
 <pre>app/design/frontend/Vendor/customtheme/
@@ -807,10 +902,46 @@ openssl, pdo_mysql, simplexml, soap, spl, xsl, zip, sodium</pre>
         <h2 id="ui-components">UI 组件</h2>
         <p>Magento 2 使用 UI Component 系统构建后台表单、列表和网格。UI 组件通过 XML 定义，自动绑定 KnockoutJS 数据。</p>
 
+        <h2 id="cli">CLI 命令参考</h2>
+
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>命令</th><th>说明</th><th>示例</th></tr></thead>
+            <tbody>
+              <tr><td><code>setup:install</code></td><td>安装 Magento</td><td><code>bin/magento setup:install --...</code></td></tr>
+              <tr><td><code>setup:upgrade</code></td><td>升级模块/数据库</td><td><code>bin/magento setup:upgrade</code></td></tr>
+              <tr><td><code>setup:di:compile</code></td><td>编译 DI 代理类</td><td><code>bin/magento setup:di:compile</code></td></tr>
+              <tr><td><code>setup:static-content:deploy</code></td><td>生成静态资源</td><td><code>bin/magento setup:static-content:deploy -f</code></td></tr>
+              <tr><td><code>cache:flush</code></td><td>清空所有缓存</td><td><code>bin/magento cache:flush</code></td></tr>
+              <tr><td><code>cache:clean</code></td><td>清理过期缓存</td><td><code>bin/magento cache:clean</code></td></tr>
+              <tr><td><code>cache:enable/disable</code></td><td>启用/禁用缓存类型</td><td><code>bin/magento cache:enable layout</code></td></tr>
+              <tr><td><code>indexer:reindex</code></td><td>重建所有索引</td><td><code>bin/magento indexer:reindex</code></td></tr>
+              <tr><td><code>deploy:mode:set</code></td><td>切换运行模式</td><td><code>bin/magento deploy:mode:set production</code></td></tr>
+              <tr><td><code>module:status</code></td><td>查看模块状态</td><td><code>bin/magento module:status</code></td></tr>
+              <tr><td><code>module:enable/disable</code></td><td>启用/禁用模块</td><td><code>bin/magento module:enable Vendor_Module</code></td></tr>
+              <tr><td><code>cron:run</code></td><td>执行 Cron 任务</td><td><code>bin/magento cron:run</code></td></tr>
+              <tr><td><code>info:adminuri</code></td><td>获取 Admin URL</td><td><code>bin/magento info:adminuri</code></td></tr>
+              <tr><td><code>maintenance:enable/disable</code></td><td>维护模式开关</td><td><code>bin/magento maintenance:enable</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout callout-info">
+          <span class="callout-icon">💡</span> 查看所有可用命令：<code>bin/magento list</code>
+        </div>
+
         <hr class="docs-section-divider">
 
-        <!-- ==================== API 参考 ==================== -->
-        <h1 id="rest-api">API 参考 — REST API</h1>
+        <!-- ==================== 🔌 API文档 ==================== -->
+        <div class="sidebar-group-marker" id="group-api-marker">
+          <div class="group-banner">
+            <span class="group-banner-icon">🔌</span>
+            <h2>API 文档</h2>
+            <p>REST API、GraphQL、认证方式、安全与性能——集成与接口开发参考</p>
+          </div>
+        </div>
+
+        <h1 id="rest-api">REST API</h1>
 
         <p>Magento 2 提供完整的 REST API，覆盖商品、订单、客户、购物车等所有核心功能。</p>
 
@@ -859,10 +990,7 @@ openssl, pdo_mysql, simplexml, soap, spl, xsl, zip, sodium</pre>
           </table>
         </div>
 
-        <hr class="docs-section-divider">
-
-        <!-- ==================== 安全与性能 ==================== -->
-        <h1 id="security">安全功能</h1>
+        <h2 id="security">安全功能</h2>
 
         <div class="table-wrapper">
           <table>
@@ -894,35 +1022,9 @@ openssl, pdo_mysql, simplexml, soap, spl, xsl, zip, sodium</pre>
           </ul>
         </div>
 
-        <hr class="docs-section-divider">
-
-        <!-- ==================== CLI 命令 ==================== -->
-        <h1 id="cli">CLI 命令参考</h1>
-
-        <div class="table-wrapper">
-          <table>
-            <thead><tr><th>命令</th><th>说明</th><th>示例</th></tr></thead>
-            <tbody>
-              <tr><td><code>setup:install</code></td><td>安装 Magento</td><td><code>bin/magento setup:install --...</code></td></tr>
-              <tr><td><code>setup:upgrade</code></td><td>升级模块/数据库</td><td><code>bin/magento setup:upgrade</code></td></tr>
-              <tr><td><code>setup:di:compile</code></td><td>编译 DI 代理类</td><td><code>bin/magento setup:di:compile</code></td></tr>
-              <tr><td><code>setup:static-content:deploy</code></td><td>生成静态资源</td><td><code>bin/magento setup:static-content:deploy -f</code></td></tr>
-              <tr><td><code>cache:flush</code></td><td>清空所有缓存</td><td><code>bin/magento cache:flush</code></td></tr>
-              <tr><td><code>cache:clean</code></td><td>清理过期缓存</td><td><code>bin/magento cache:clean</code></td></tr>
-              <tr><td><code>cache:enable/disable</code></td><td>启用/禁用缓存类型</td><td><code>bin/magento cache:enable layout</code></td></tr>
-              <tr><td><code>indexer:reindex</code></td><td>重建所有索引</td><td><code>bin/magento indexer:reindex</code></td></tr>
-              <tr><td><code>deploy:mode:set</code></td><td>切换运行模式</td><td><code>bin/magento deploy:mode:set production</code></td></tr>
-              <tr><td><code>module:status</code></td><td>查看模块状态</td><td><code>bin/magento module:status</code></td></tr>
-              <tr><td><code>module:enable/disable</code></td><td>启用/禁用模块</td><td><code>bin/magento module:enable Vendor_Module</code></td></tr>
-              <tr><td><code>cron:run</code></td><td>执行 Cron 任务</td><td><code>bin/magento cron:run</code></td></tr>
-              <tr><td><code>info:adminuri</code></td><td>获取 Admin URL</td><td><code>bin/magento info:adminuri</code></td></tr>
-              <tr><td><code>maintenance:enable/disable</code></td><td>维护模式开关</td><td><code>bin/magento maintenance:enable</code></td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="callout callout-info">
-          <span class="callout-icon">💡</span> 查看所有可用命令：<code>bin/magento list</code>
+        <!-- 资源与 GitHub -->
+        <div class="callout callout-info mt-4">
+          <span class="callout-icon">🔗</span> 本站文档源码开源，欢迎贡献：<a href="https://github.com/shuaiZend/mtc" target="_blank" rel="noopener">GitHub 仓库</a> · 交流提问：<a href="https://forum.magentochina.org/" target="_blank" rel="noopener">中文社区论坛</a>
         </div>
 
       </main>
@@ -932,9 +1034,39 @@ openssl, pdo_mysql, simplexml, soap, spl, xsl, zip, sodium</pre>
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-name">Magento<span style="color:var(--primary)">China</span></div>
+          <p>Magento 2 中文社区门户，为中文商家和开发者提供完整的文档、社区交流和专业资源。</p>
+        </div>
+        <div>
+          <div class="footer-heading">资源</div>
+          <ul class="footer-links">
+            <li><a href="/docs.html">技术文档</a></li>
+            <li><a href="https://forum.magentochina.org/" target="_blank" rel="noopener">问答社区</a></li>
+            <li><a href="https://marketplace.magento.com/" target="_blank" rel="noopener">扩展市场</a></li>
+            <li><a href="https://github.com/shuaiZend/mtc" target="_blank" rel="noopener">本站 GitHub</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">官方</div>
+          <ul class="footer-links">
+            <li><a href="https://developer.adobe.com/commerce/docs/" target="_blank" rel="noopener">Adobe Commerce 文档</a></li>
+            <li><a href="https://devdocs.mage-os.org/" target="_blank" rel="noopener">Mage-OS 文档</a></li>
+            <li><a href="https://github.com/magento/magento2" target="_blank" rel="noopener">Magento2 GitHub</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">关于</div>
+          <ul class="footer-links">
+            <li><a href="/about.html">关于本站</a></li>
+            <li><a href="/community.html">社区介绍</a></li>
+          </ul>
+        </div>
+      </div>
       <div class="footer-bottom">
         <span>&copy; 2024-2026 Magento China Community. Magento 是 Adobe Inc. 的注册商标。</span>
-        <span>基于 Mage-OS / Adobe Commerce 文档整理</span>
+        <span>本站内容基于 Mage-OS / Adobe Commerce 文档整理 · <a href="https://github.com/shuaiZend/mtc" target="_blank" rel="noopener" style="color:var(--primary)">GitHub</a></span>
       </div>
     </div>
   </footer>
